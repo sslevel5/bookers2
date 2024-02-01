@@ -1,0 +1,30 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <%= value %>
+  </div>
+<% end %>
+
+
+
+<div class="container">
+
+<div class="col-6 offset-3">
+  
+<h1>welcome to Bookers !!</h1>
+
+<p>In Bookers,</p>
+
+<p>you can share and exchange your opinions , inpressions , and emotions</p>
+
+<p>about various books!</p>
+
+<div class="mx-auto" style="width: 200px;">
+<%= link_to("Log in", "/users/sign_in") %>
+</div>
+<div class="mx-auto" style="width: 200px;">
+<%= link_to("Sign up", "/users/sign_up") %>
+</div>
+
+</div>
+
+</div>

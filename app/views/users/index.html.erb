@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+
+    <!-- ユーザー詳細 -->
+      <h2>User info</h2>
+      <%= image_tag @user.get_profile_image(100,100) %>
+          <table class="table table-hover">
+            <tr>
+              <th>name</th>
+              <td><%= @user.name %></td>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <td><%= @user.introduction %></td>
+            </tr>
+          </table>
+      <% if @user == current_user %>
+        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+      <% end %>
+
+
+
+
+    <!-- 新規投稿 -->
+      <h2>New Book</h2>
+
+      <%= form_with(model: [@user, @book], url: books_path) do |f| %>
+
+        <div class="form-group">
+        <p>Title</p>
+        <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+        <p>Opinion</p>
+        <%= f.text_area :opinion, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Create Book' %>
+      <% end %>
+
+    </div>
+
+
+    <div class="col-md-8 offset-md-1">
+
+    <!-- ユーザー一覧 -->
+
+      <h2>Users</h2>
+        <table class="table table-hover">
+        <tr>
+        <th>image</th>
+        <th>name</th>
+        <th></th>
+        </tr>
+          <% @users.each do |user| %>
+            <tr>
+            <td><%= image_tag user.get_profile_image(70,70) %></td>
+            <td><%= user.name %></td>
+            <td><%= link_to "Show", user %></td>
+            </tr>
+          <% end %>
+        </table>
+    </div>
+
+  </div>
+</div>
