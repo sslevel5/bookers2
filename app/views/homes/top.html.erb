@@ -8,23 +8,26 @@
 
 <div class="container">
 
-<div class="col-6 offset-3">
-  
-<h1>welcome to Bookers !!</h1>
+  <div class="row">
 
-<p>In Bookers,</p>
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
 
-<p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <h1>welcome to Bookers !!</h1>
 
-<p>about various books!</p>
+      <p>In Bookers,</p>
 
-<div class="mx-auto" style="width: 200px;">
-<%= link_to("Log in", "/users/sign_in") %>
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+
+      <p>about various books!</p>
+
+    <div class="btn-wrapper col-10 mx-auto">
+      <div class="row">
+        <%= link_to("Log in", "/users/sign_in") %>
+      </div>
+      <div class="row">
+        <%= link_to("Sign up", "/users/sign_up") %>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="mx-auto" style="width: 200px;">
-<%= link_to("Sign up", "/users/sign_up") %>
-</div>
-
-</div>
-
 </div>
