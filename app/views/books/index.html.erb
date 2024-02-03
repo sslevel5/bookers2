@@ -1,6 +1,6 @@
 <div class="container">
   <% if @book.errors.any? %>
-    <%= @book.errors.count %>errors prohibited this obj from being saved:
+    <h3><%= @book.errors.count %>errors prohibited this obj from being saved:</h3>
     <ul>
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -73,7 +73,7 @@
               <% end %>
             </td>
             <td>
-              <%= link_to books_path(book.id) do %>
+              <%= link_to book_path(book.id) do %>
               <%= book.title %>
               <% end %>
             </td>
