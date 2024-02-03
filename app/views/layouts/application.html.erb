@@ -18,11 +18,11 @@
       <div class="container">
 
         <% if user_signed_in? %>
-          <%= link_to top_path,class:'navbar-brand' do %>
+          <%= link_to root_path,class:'navbar-brand' do %>
             <span>Bookers<span>
           <% end %>
         <% else %>
-          <%= link_to top_path,class:'navbar-brand' do %>
+          <%= link_to root_path,class:'navbar-brand' do %>
             <span>Bookers<span>
           <% end %>
         <% end %>
@@ -49,7 +49,7 @@
             <li>
               <%= link_to books_path,class: 'nav-link text-light' do %>
               <i class="fa-solid fa-book-open"></i>
-              Book
+              Books
               <% end %>
             </li>
             <li>
@@ -60,13 +60,13 @@
             </li>
           <% else %>
             <li>
-              <%= link_to top_path,class: 'nav-link text-light' do %>
+              <%= link_to root_path,class: 'nav-link text-light' do %>
               <i class="fa-solid fa-house"></i>
               Home
               <% end %>
             </li>
             <li>
-              <%= link_to about_path,class: 'nav-link text-light' do %>
+              <%= link_to home_about_path,class: 'nav-link text-light' do %>
               <i class="fa-solid fa-link"></i>
               About
               <% end %>

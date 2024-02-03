@@ -46,8 +46,8 @@
           <%= f.text_field :title, name: "book[title]", class: 'form-control' %>
         </div>
         <div class="form-group">
-          <p>Opinion</p>
-          <%= f.text_area :opinion, name: "book[opinion]", class: 'form-control' %>
+          <p>body</p>
+          <%= f.text_area :body, name: "book[body]", class: 'form-control' %>
         </div>
         <%= f.submit 'Create Book', class: "btn btn-success", "data-disable-with": "Create Book" %>
       <% end %>
@@ -78,7 +78,7 @@
               <% end %>
             </td>
             <td>
-              <%= book.opinion %>
+              <%= book.body %>
             </td>
           </tr>
         <% end %>
