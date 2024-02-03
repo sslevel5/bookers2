@@ -23,10 +23,13 @@
             </tr>
           </table>
       <% end %>
-      <% if @user == current_user %>
-        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+      <div class="row">
+        <% if @user == current_user %>
+          <%= link_to edit_user_path(@user), class: 'btn btn-outline-secondary btn-block' do %>
+          <i class="fa-solid fa-user-gear"></i>
+        <% end %>
       <% end %>
-
+      </div>
   <!-- 新規投稿 -->
 
       <h2>New Book</h2>
@@ -41,7 +44,7 @@
         <h4>Opinion</h4>
         <%= f.text_area :opinion, class: 'form-control' %>
         </div>
-        <%= f.submit 'Create Book' %>
+        <%= f.submit 'Create Book', class: "btn btn-success", "data-disable-with": "Create Book" %>
       <% end %>
     </div>
 
@@ -50,8 +53,8 @@
       <!-- 本の詳細 -->
 
       <h2>Book detail</h2>
-        <table class="table table-hover">
-
+        <table class="table">
+        <tbody>
         <tr>
           <td>
           <%= link_to(user_path(@book.user)) do %>
@@ -68,13 +71,14 @@
           </td>
         <% if @book.user == current_user %>
           <td>
-          <%= link_to "Edit", edit_book_path(@book.id) %>
+          <%= link_to "Edit", edit_book_path(@book.id),class: "btn btn-sm btn-success Edit" %>
           </td>
           <td>
-          <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
+          <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-sm btn-danger Destroy" %>
           </td>
         <% end %>
         </tr>
+        </tbody>
         </table>
     </div>
 
