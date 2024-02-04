@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: [:create, :edit, :update, :show, :index]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :show, :index]
+
   def new
     @book = Book.new
   end
